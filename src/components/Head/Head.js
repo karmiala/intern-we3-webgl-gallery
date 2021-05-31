@@ -14,6 +14,7 @@ function Head({ title, description, keywords }) {
   const ogUrl = `${process.env.NEXT_PUBLIC_WEBSITE_SITE_URL}${router.asPath}`;
   const ogDefaultImage = `${process.env.NEXT_PUBLIC_WEBSITE_SITE_URL}/assets/images/share-image.jpg`;
   const fullTitle = title ? `${title} ${TITLE_SEPARATOR} ${siteName}` : `${siteName} ${TITLE_SEPARATOR} ${siteSlogan}`;
+  const basePath = `${process.env.NEXT_PUBLIC_WEBSITE_SITE_URL}`;
 
   return (
     <NextHead>
@@ -24,13 +25,13 @@ function Head({ title, description, keywords }) {
       {/* Generate favicons in https://realfavicongenerator.net */}
       <meta name="theme-color" content="#ffffff" />
       <meta name="msapplication-TileColor" content="#ffffff" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-      <link rel="manifest" href="/favicons/site.webmanifest" crossOrigin="use-credentials" />
-      <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#000000" />
-      <link rel="shortcut icon" href="/favicons/favicon.ico" />
-      <meta name="msapplication-config" content="/favicons/browserconfig.xml" />
+      <link rel="apple-touch-icon" sizes="180x180" href={basePath + '/favicons/apple-touch-icon.png'} />
+      <link rel="icon" type="image/png" sizes="32x32" href={basePath + '/favicons/favicon-32x32.png'} />
+      <link rel="icon" type="image/png" sizes="16x16" href={basePath + '/favicons/favicon-16x16.png'} />
+      <link rel="manifest" href={basePath + '/favicons/site.webmanifest'} crossOrigin="use-credentials" />
+      <link rel="mask-icon" href={basePath + '/favicons/safari-pinned-tab.svg'} color="#000000" />
+      <link rel="shortcut icon" href={basePath + '/favicons/favicon.ico'} />
+      <meta name="msapplication-config" content={basePath + '/favicons/browserconfig.xml'} />
       {/* Share meta tags */}
       <meta property="og:locale" content="en_US" />
       <meta property="og:title" content={fullTitle} />

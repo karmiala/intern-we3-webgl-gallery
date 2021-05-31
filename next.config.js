@@ -47,6 +47,7 @@ const nextJSConfig = {
   experimental: {
     modern: true
   },
+  //assetPrefix: '/intern-we3-webgl-gallery/',
   webpack: function (config, options) {
     const moduleSassRule = config.module.rules[1].oneOf.find(
       (rule) => rule.test.toString() === /\.module\.(scss|sass)$/.toString()

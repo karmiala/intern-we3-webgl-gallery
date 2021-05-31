@@ -34,7 +34,7 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
-import { ColorifyShader } from './ColorifyShaderMod.js';
+import { ColorifyShader } from '../../../utils/threejs/ColorifyShaderMod';
 import disposeObjects from '../../../utils/dispose-objects';
 
 function Art() {

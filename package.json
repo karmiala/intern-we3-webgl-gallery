@@ -1,4 +1,5 @@
 {
+  "homepage": "https://jam3.github.io",
   "name": "jam3-dev",
   "version": "0.1.0",
   "private": true,
@@ -15,12 +16,13 @@
     "start": "next start",
     "\n ######################  NPM Secondary Pipeline  ######################": "",
     "build:ssr": "next build",
-    "build:prod:static": "cross-env CI_ENV=prod next build && next export && cross-env CI_ENV=prod npm-run-all robots-txt-generator sitemap-generator",
+    "build:prod:static": "cross-env CI_ENV=prod next build && next export && cross-env CI_ENV=prod npm-run-all robots-txt-generator sitemap-generator nojekyll",
     "build:staging:static": "cross-env CI_ENV=staging next build && next export",
     "build:develop:static": "cross-env CI_ENV=develop next build && next export",
     "ci-prod-server": "serve out &",
     "sitemap-generator": "node scripts/nextjs-sitemap-generator.js",
     "robots-txt-generator": "node scripts/robots-txt-generator.js",
+    "nojekyll": "node scripts/nojekyll.js",
     "\n ######################  Support Development Tools  ######################": "",
     "storybook": "start-storybook -p 9001 -c .storybook -s ./public",
     "component": "node scripts/component.js",
@@ -33,7 +35,7 @@
     "js-lint": "eslint \"./src/**/*.js\" -c ./.eslintrc.json --quiet --ignore-pattern .gitignore --ignore-pattern *.stories.js",
     "sass-lint": "stylelint \"./src/**/*.scss\"",
     "ls-lint": "node_modules/.bin/ls-lint",
-    "deploy": "env-cmd -f .env.gh-pages npm run build:prod:static && gh-pages -d build"
+    "deploy": "env-cmd -f .env.gh-pages npm run build:prod:static && gh-pages -d out"
   },
   "dependencies": {
     "@babel/core": "^7.11.1",
@@ -135,7 +137,7 @@
     "extends": "react-app"
   },
   "engines": {
-    "node": ">=10.15.0",
+    "node": "14.16.1",
     "npm": ">=6.5.0"
   },
   "husky": {

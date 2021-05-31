@@ -37,6 +37,8 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { GlitchPass } from '../utils/threejs/GlitchPass.js';
 import disposeObjects from '../utils/dispose-objects';
 
+console.log(GlitchPass);
+
 function Art() {
   const inputEl = useRef(null);
 
