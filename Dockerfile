@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 COPY . .
 
 # Install dependencies
-RUN lscpu
+RUN lscpu 
 
 # Expose files
 VOLUME ["/usr/src/app"]
